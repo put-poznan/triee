@@ -30,12 +30,26 @@ void dividers(int num, int from, int to, int depth, int childs) {
           from + (step * (i + 1)),
           depth - 1,
           childs);
+
+      return;
     }
   }
 }
 
 int main(int argc, char *argv[]) {
-  dividers(1000, 1, 100, 2, 2);
+  if (argc != 6) {
+    exit(10);
+  }
+
+  int num, from, to, depth, childs;
+
+  sscanf(argv[1], "%d", &num);
+  sscanf(argv[2], "%d", &from);
+  sscanf(argv[3], "%d", &to);
+  sscanf(argv[4], "%d", &depth);
+  sscanf(argv[5], "%d", &childs);
+
+  dividers(num, from, to, depth, childs);
 
   return 0;
 }
